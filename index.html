@@ -219,6 +219,71 @@
     .hpb-microcopy a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 180ms ease; }
     .hpb-microcopy a:hover { color: #fff; }
 
+    /* Trusted-by logos */
+    .trusted-by { padding: 64px 24px 80px; background: #ffffff; }
+    .trusted-by-inner { max-width: 1180px; margin: 0 auto; }
+    .trusted-by-eyebrow {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin: 0 0 40px;
+    }
+    .trusted-by-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      column-gap: 24px;
+      row-gap: 48px;
+      align-items: center;
+      justify-items: center;
+    }
+    .trusted-by-cell {
+      display: flex; align-items: center; justify-content: center;
+      height: 40px; width: 100%;
+    }
+    .trusted-by-cell img {
+      max-width: 140px; width: auto; object-fit: contain;
+      opacity: 0.7;
+      filter: brightness(0);
+      transition: opacity 480ms ease, transform 480ms ease, filter 480ms ease;
+    }
+    .trusted-by-cell:hover img { opacity: 1; filter: none; transform: scale(1.06); }
+    @media (max-width: 1023px) {
+      .trusted-by { padding: 48px 0 56px; }
+      .trusted-by-inner { max-width: none; padding: 0; }
+      .trusted-by-grid {
+        display: block;
+        grid-template-columns: none;
+        column-gap: 0; row-gap: 0;
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+      }
+      .trusted-by-track {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        width: max-content;
+        animation: trustedMarquee 38s linear infinite;
+      }
+      .trusted-by-track:hover { animation-play-state: paused; }
+      .trusted-by-cell {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 120px;
+        height: 48px;
+        padding: 0 6px;
+      }
+      .trusted-by-cell img { max-width: 160px; }
+      @keyframes trustedMarquee {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+    }
+
     /* Preloader */
     #preloader {
       position: fixed; inset: 0; z-index: 9990;
@@ -1362,6 +1427,28 @@
 
   </section>
 
+  <!-- ─── Trusted by ──────────────────────────────────── -->
+  <section class="trusted-by">
+    <div class="trusted-by-inner">
+      <div class="trusted-by-grid" id="trustedByGrid">
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Unilever.svg" alt="Unilever" style="max-height:30px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Knorr.svg" alt="Knorr" style="max-height:28px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Kayali.svg" alt="Kayali" style="max-height:28px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Pega.svg" alt="Pega" style="max-height:19px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Ashley.svg" alt="Ashley" style="max-height:22px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Buzzlab.svg" alt="Buzzlab" style="max-height:18px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Crumble.svg" alt="Crumble" style="max-height:18px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/DAP.svg" alt="DAP" style="max-height:30px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Framon.svg" alt="Framon" style="max-height:18px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Komodo.svg" alt="Komodo" style="max-height:20px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/ROLLEMAN.svg" alt="ROLLEMAN" style="max-height:15px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/Smarters.svg" alt="Smarters" style="max-height:16px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/mnsaj.svg" alt="mnsaj" style="max-height:30px"></div>
+        <div class="trusted-by-cell"><img src="assets/brand-logos/xolour.svg" alt="xolour" style="max-height:13px"></div>
+      </div>
+    </div>
+  </section>
+
   <script>
   (function() {
     // ── Cycling placeholder prompts (exact from reference) ──
@@ -2495,6 +2582,29 @@
       }
     })();
 
+  </script>
+  <script>
+  // Trusted-by marquee: wrap cells in a track and duplicate for seamless loop on small screens.
+  (function(){
+    var grid = document.getElementById('trustedByGrid');
+    if (!grid) return;
+    var mq = window.matchMedia('(max-width: 1023px)');
+    var wrapped = false;
+    function apply(){
+      if (mq.matches && !wrapped) {
+        var cells = Array.from(grid.children);
+        var track = document.createElement('div');
+        track.className = 'trusted-by-track';
+        cells.forEach(function(c){ track.appendChild(c); });
+        // Duplicate cells for seamless wrap
+        cells.forEach(function(c){ track.appendChild(c.cloneNode(true)); });
+        grid.appendChild(track);
+        wrapped = true;
+      }
+    }
+    apply();
+    mq.addEventListener ? mq.addEventListener('change', apply) : mq.addListener(apply);
+  })();
   </script>
 </body>
 </html>
