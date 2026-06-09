@@ -1638,7 +1638,7 @@
 
         <!-- Heading, top-center, fades as scroll begins -->
         <div class="mkt-hiw-head" id="hiw-head">
-          <h2>Create <span class="mkt-hiw-pill"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-portrait-1.webp" alt=""></span> on-brand visuals<br>for every channel.</h2>
+          <h2>Create on-brand visuals<br>for every channel.</h2>
           <p>Drop your references. Watch them merge into campaign-ready visuals.</p>
         </div>
 
@@ -2293,11 +2293,11 @@
       <div class="mkt-faq-list reveal">
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>Will the ads look obviously AI-generated?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">Judge by the output, not the description. The gallery above is entirely AI-generated using ImagineArt. Our avatars use Seedance 2.0 with native lip-sync, physics-aware movement, and consistent characters across shots. The formats, UGC, virtual try-on, hyper motion, are chosen specifically because they map to natural, realistic styles that perform on paid social. The fastest way to answer this question is to watch the demo videos on this page.</p>
             </div>
@@ -2305,11 +2305,11 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>Does this work for my product type?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">If your product has a page or a photo, the studio works with it. We see strong results across beauty, skincare, supplements, apparel, footwear, accessories, electronics, home goods, food and beverage, and digital products. Virtual try-on and hyper motion are especially powerful for fashion and luxury. UGC and review modes work best for consumables and health products.</p>
             </div>
@@ -2317,11 +2317,11 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>Can I use the ads on Meta, TikTok, and YouTube?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">Every export is formatted to platform spec: correct aspect ratios for Stories, Reels, Feed, TikTok, YouTube pre-roll, and more. Paid plans export with no watermarks. Download and upload directly to Ads Manager, no post-processing or resizing required.</p>
             </div>
@@ -2329,11 +2329,11 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>What if I need full control over the script?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">You always have full edit access before generating. The AI writes the first draft based on your product and chosen hook. You can edit every line in the interface before hitting generate, or skip editing entirely and ship as-is. The AI saves 90% of the work. You stay in control of the final output.</p>
             </div>
@@ -2341,11 +2341,11 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>How many ad variants can I generate?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">As many as your plan allows, and plans are structured for high-volume production. A single session can produce 20-50 variants across different formats, avatars, hooks, and product angles. This is the output velocity your ad account needs to stay ahead of creative fatigue on Meta and TikTok.</p>
             </div>
@@ -2353,11 +2353,11 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="false">
+          <button class="mkt-faq-trigger" aria-expanded="true">
             <span>We already have a creative agency. Why switch?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer">
+          <div class="mkt-faq-answer" data-open="true">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">You probably do not need to fully switch - you need to supplement. Agencies are great for hero brand campaigns. They are slow and expensive for the ongoing volume that Meta and TikTok demand. Most brands use ImagineArt to create ads with AI for paid social, the ongoing ad creatives Meta and TikTok demand, and keep their agency for big quarterly launches. Imagine Ads Studio doesn't replace brand strategy. It replaces the production bottleneck. The cost difference: $5,000-$15,000 per agency shoot versus a monthly studio subscription.</p>
             </div>
@@ -2369,6 +2369,13 @@
   </section>
   <script>
     (function() {
+      // Open all FAQs by default
+      document.querySelectorAll('.mkt-faq-trigger').forEach(function(btn) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.setAttribute('data-open', 'true');
+        var icon = btn.querySelector('.mkt-faq-icon');
+        if (icon) icon.textContent = '−';
+      });
       document.querySelectorAll('.mkt-faq-trigger').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var expanded = btn.getAttribute('aria-expanded') === 'true';
