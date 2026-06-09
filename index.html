@@ -1488,10 +1488,7 @@
     ];
 
     function pickRandomChips(exclude) {
-      var avail = CHIP_POOL.filter(function(c) {
-        return !exclude || exclude.indexOf(c.label) === -1;
-      });
-      return avail.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 4);
+      return CHIP_POOL.slice();
     }
 
     var FADE_MS = 320, HOLD_MS = 4200;
@@ -1555,17 +1552,6 @@
         });
         chipsRow.appendChild(btn);
       });
-      // Refresh button
-      var refreshBtn = document.createElement('button');
-      refreshBtn.type = 'button';
-      refreshBtn.className = 'hpb-chip hpb-chip-icon';
-      refreshBtn.setAttribute('aria-label', 'Shuffle suggestions');
-      refreshBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-2.64-6.36L21 8"/><path d="M21 3v5h-5"/></svg>';
-      refreshBtn.addEventListener('click', function() {
-        currentChips = pickRandomChips(currentChips.map(function(c) { return c.label; }));
-        renderChips();
-      });
-      chipsRow.appendChild(refreshBtn);
     }
 
     input.addEventListener('focus', function() {
@@ -1828,7 +1814,7 @@
 
       <div class="mkt-steps-header reveal">
         <div class="sec-label">How It Works</div>
-        <h2 class="mkt-steps-h2">Product page to published ad. 4 steps. Under 3 minutes.</h2>
+        <h2 class="mkt-steps-h2">Convert your product page into scroll-stopping AI video ads in under three minutes.</h2>
         <p class="mkt-steps-sub">Paste a URL. Pick a template. Ship the ad. No brief, no designer, no back-and-forth.</p>
       </div>
 
