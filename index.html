@@ -10,7 +10,7 @@
   <meta property="og:title" content="ImagineArt Ads Studio">
   <meta property="og:description" content="Create high-converting ai ads for your campaigns with Imagine Ads Studio. Choose template - UGC, unboxing, cinematic, and generate multiple ad variations.">
   <meta property="og:type" content="website">
-  <link rel="preload" as="image" href="assets/marketing/hero-ugc-poster.jpg" fetchpriority="high">
+  <link rel="preload" href="assets/marketing/mkt-hero-1.mp4" as="video" type="video/mp4" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="canonical" href="https://www.imagine.art/ai-ad-studio"/>
@@ -1407,7 +1407,7 @@
     <div class="hero-cards-wrap">
       <div class="hero-cards" id="heroCards">
         <div class="hi">
-          <video src="assets/marketing/hero-ugc.mp4" poster="assets/marketing/hero-ugc-poster.jpg" loop muted playsinline preload="metadata"></video>
+          <video src="assets/marketing/hero-ugc.mp4" loop muted playsinline preload="auto"></video>
           <span class="hi-label">UGC</span>
         </div>
         <div class="hi">
@@ -1583,30 +1583,17 @@
     var current  = 0;
     var vidTimer = null;
 
-    function loadVideo(vid) {
-      if (vid && vid.dataset.src && !vid.src) {
-        vid.src = vid.dataset.src;
-        delete vid.dataset.src;
-        vid.load();
-      }
-    }
     function preloadVideo(index) {
       var vid = panels[index] && panels[index].querySelector('video');
-      loadVideo(vid);
+      if (vid && vid.preload === 'none') vid.preload = 'auto';
     }
     function activate(index) {
-      var prevVid = panels[current] && panels[current].querySelector('video');
-      if (prevVid && current !== index) prevVid.pause();
       current = index;
       panels.forEach(function(p, i) {
         p.classList.toggle('active', i === index);
         var vid = p.querySelector('video');
         if (!vid) return;
-        if (i === index) {
-          loadVideo(vid);
-          vid.currentTime = 0;
-          vid.play().catch(function(){});
-        }
+        if (i === index) { vid.currentTime = 0; vid.play().catch(function(){}); }
       });
       preloadVideo((index + 1) % panels.length);
       clearTimeout(vidTimer);
@@ -1671,7 +1658,7 @@
         <!-- Center, video, hidden until both cards have merged, then plays -->
         <div class="hiw-center" id="hiw-center">
           <img loading="lazy" decoding="async" id="hiw-poster" src="assets/marketing/hiw-video-poster.webp" alt="">
-          <video id="hiw-video" class="lazy-video" data-src="assets/marketing/hiw-video.mp4" muted playsinline loop preload="none"></video>
+          <video id="hiw-video" src="assets/marketing/hiw-video.mp4" muted playsinline loop></video>
           <span class="hiw-center-label">Generation</span>
         </div>
 
@@ -2311,18 +2298,18 @@
     <div class="gallery-pin-wrap">
       <div class="gallery-pin">
         <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-kitchenaid.webp" alt="Product Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Campaign</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-8.webp" alt="Out-of-Home"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Out-of-Home</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-1.webp" alt="Editorial"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Editorial</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-5.webp" alt="Brand Identity"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Brand Identity</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-trimmer.webp" alt="Lifestyle"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Lifestyle</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-6.webp" alt="Street Poster"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Street Poster</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-byredo.webp" alt="Luxury Fragrance"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Fragrance</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-9.webp" alt="Virtual Styling"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Virtual Styling</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-2.webp" alt="Fashion Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Fashion Campaign</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-laneige.webp" alt="Beauty"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Beauty</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-junday.webp" alt="Product Launch"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Launch</span></div>
-          <div class="gallery-item"><img width="400" height="400" loading="lazy" decoding="async" src="assets/marketing/gallery-lv.webp" alt="Luxury Accessories"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Accessories</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-kitchenaid.webp" alt="Product Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Campaign</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-8.webp" alt="Out-of-Home"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Out-of-Home</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-1.webp" alt="Editorial"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Editorial</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-5.webp" alt="Brand Identity"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Brand Identity</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-trimmer.webp" alt="Lifestyle"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Lifestyle</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-6.webp" alt="Street Poster"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Street Poster</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-byredo.webp" alt="Luxury Fragrance"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Fragrance</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-9.webp" alt="Virtual Styling"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Virtual Styling</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-2.webp" alt="Fashion Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Fashion Campaign</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-laneige.webp" alt="Beauty"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Beauty</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-junday.webp" alt="Product Launch"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Launch</span></div>
+          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-lv.webp" alt="Luxury Accessories"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Accessories</span></div>
         </div>
       </div>
     </div>
@@ -2497,8 +2484,8 @@
   <!-- ─── Footer ───────────────────────────────────────────── -->
   <div id="site-footer"></div>
 
-  <script src="navbar.js" defer></script>
-  <script src="footer.js" defer></script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
   <script>
     // Preloader
     (function() {
@@ -2788,12 +2775,10 @@
   if(!vids.length) return;
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      var v = e.target;
       if(e.isIntersecting){
-        if(v.dataset.src){ v.src = v.dataset.src; delete v.dataset.src; v.load(); }
-        v.play().catch(function(){});
-      } else {
-        if(!v.paused) v.pause();
+        var v = e.target;
+        if(v.dataset.src){ v.src = v.dataset.src; v.load(); }
+        io.unobserve(v);
       }
     });
   }, {rootMargin:'200px'});
