@@ -1362,14 +1362,18 @@
     /* ═══════════════════════════════════════════════════════
        RESPONSIVE - short viewports (MacBook 800px height)
        ═══════════════════════════════════════════════════════ */
+    @media (max-height: 960px) and (min-width: 1025px) {
+      .mkt-hero { padding-bottom: 200px; }
+      .hero-cards { height: 250px; }
+    }
     @media (max-height: 860px) {
       .mkt-hero {
         justify-content: center;
         padding-top: 96px;
-        padding-bottom: 120px;
+        padding-bottom: 160px;
       }
       .hero-top { margin-bottom: 36px; }
-      .hero-cards { height: 280px; }
+      .hero-cards { height: 240px; }
       .hero-bottom { bottom: 24px; gap: 10px; }
     }
   </style>
