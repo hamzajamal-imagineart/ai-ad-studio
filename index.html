@@ -35,8 +35,8 @@
       height: 100vh; min-height: 750px;
       background: var(--dark);
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 56px 64px 140px;
+      align-items: center; justify-content: flex-start;
+      padding: 56px 64px 40px;
       overflow: hidden;
       position: relative;
     }
@@ -114,9 +114,12 @@
 
     /* ── HeroPromptBox, exact reference port ───────────────── */
     .hero-bottom {
-      position: absolute; bottom: 56px; left: 0; right: 0;
+      position: relative;
+      width: 100%;
       display: flex; flex-direction: column; align-items: center;
       z-index: 10; padding: 0 40px;
+      margin-top: auto;
+      padding-bottom: 24px;
     }
     .hpb-form {
       position: relative; width: 100%; max-width: 480px; margin: 0 auto;
@@ -1362,19 +1365,11 @@
     /* ═══════════════════════════════════════════════════════
        RESPONSIVE - short viewports (MacBook 800px height)
        ═══════════════════════════════════════════════════════ */
-    @media (max-height: 960px) and (min-width: 1025px) {
-      .mkt-hero { padding-bottom: 200px; }
-      .hero-cards { height: 250px; }
-    }
     @media (max-height: 860px) {
-      .mkt-hero {
-        justify-content: center;
-        padding-top: 96px;
-        padding-bottom: 160px;
-      }
-      .hero-top { margin-bottom: 36px; }
+      .mkt-hero { padding-top: 40px; }
+      .hero-top { margin-bottom: 24px; }
       .hero-cards { height: 240px; }
-      .hero-bottom { bottom: 24px; gap: 10px; }
+      .hero-bottom { padding-bottom: 12px; gap: 8px; }
     }
   </style>
 </head>
