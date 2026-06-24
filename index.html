@@ -850,7 +850,7 @@
     /* 4-column cards grid */
     .mkt-steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 20px;
       overflow: hidden;
@@ -1331,10 +1331,10 @@
       /* ── Steps section ───────────────────────────────────── */
       .mkt-steps { padding: 80px 20px 72px; }
       .mkt-steps-h2 { letter-spacing: -1.5px; }
-      .mkt-steps-grid { grid-template-columns: 1fr 1fr; border-radius: 16px; }
+      .mkt-steps-grid { grid-template-columns: 1fr; border-radius: 16px; }
       .mkt-step-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 28px 24px; }
-      .mkt-step-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
-      .mkt-step-card:nth-last-child(-n+2) { border-bottom: none; }
+      .mkt-step-card:nth-child(odd) { border-right: none; }
+      .mkt-step-card:last-child { border-bottom: none; }
       .mkt-step-num { font-size: 40px; margin-bottom: 28px; }
 
       /* ── How It Works Z-fold ─────────────────────────────── */
@@ -1821,7 +1821,7 @@
         <div class="mkt-step-card">
           <span class="mkt-step-num">01</span>
           <h3 class="mkt-step-title">Add Your Product & Avatar</h3>
-          <p class="mkt-step-body">Add product link from Amazon, your DTC store, or any ecommerce URL and select an AI avatar from the built-in library. If you don't have product links, you can upload a product image and AI ad avatar manually.</p>
+          <p class="mkt-step-body">Paste a product URL from Amazon, your DTC store, or any ecommerce page. The studio scrapes your product images automatically. Then pick an AI avatar from the built-in library or upload your own.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             ~10 seconds
@@ -1829,26 +1829,17 @@
         </div>
         <div class="mkt-step-card">
           <span class="mkt-step-num">02</span>
-          <h3 class="mkt-step-title">Choose Your Hook & Format</h3>
-          <p class="mkt-step-body">Pick your ad format, including UGC, unboxing, virtual try-on, ASMR, and more. Then select your hook and choose from stunt and subtle hooks. It helps set the exact first 3 seconds that stop the scroll.</p>
+          <h3 class="mkt-step-title">Pick Your Format & Hook</h3>
+          <p class="mkt-step-body">Choose your ad format — UGC, unboxing, virtual try-on, ASMR, and more. Select a hook style that sets the first 3 seconds. Set your scene, aspect ratio, and duration. The AI handles the script.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-            ~20 seconds
+            ~30 seconds
           </span>
         </div>
         <div class="mkt-step-card">
           <span class="mkt-step-num">03</span>
-          <h3 class="mkt-step-title">Describe Your Ad</h3>
-          <p class="mkt-step-body">Use @ tagging to specify your product and avatar directly in your prompt. Set your scene and pick a setting that fits your product. Choose the aspect ratio, AI ad duration, and video quality.</p>
-          <span class="mkt-step-time">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-            ~1 minute
-          </span>
-        </div>
-        <div class="mkt-step-card">
-          <span class="mkt-step-num">04</span>
-          <h3 class="mkt-step-title">Hit Create</h3>
-          <p class="mkt-step-body">Your AI video ads render in minutes and download with the correct aspect ratios and specifications for Meta, TikTok, YouTube, and Google already applied.</p>
+          <h3 class="mkt-step-title">Hit Create & Download</h3>
+          <p class="mkt-step-body">Your AI video ad renders in minutes with correct aspect ratios and export specs for Meta, TikTok, YouTube, and Google already applied. Download and upload directly to Ads Manager.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             ~2 minutes
