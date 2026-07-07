@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- <base href="/ai-ad-studio/"> -->
   <link rel="icon" href="https://www.imagine.art/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Ad Generator: Create Any Ad Format in One Studio</title>
-  <meta name="description" content="Turn any product URL into high-converting AI ads in under 3 minutes. Nine formats, 40+ AI avatars, and correct export specs for Meta, TikTok, YouTube, and others.">
+  <title>AI Ads Studio — Create Ads with AI from One Product URL | ImagineArt</title>
+  <meta name="description" content="Create every ad your campaign needs from one product URL — UGC, unboxing, cinematic, and more, with Imagine Ads Studio.">
   <meta property="og:title" content="ImagineArt Ads Studio">
-  <meta property="og:description" content="Create high-converting ai ads for your campaigns with Imagine Ads Studio. Choose template - UGC, unboxing, cinematic, and generate multiple ad variations.">
+  <meta property="og:description" content="One product URL. Every ad format your campaign needs. Generate UGC ads, product videos, and cinematic creatives in minutes.">
   <meta property="og:type" content="website">
-  <link rel="preload" href="assets/marketing/mkt-hero-1.mp4" as="video" type="video/mp4" fetchpriority="high">
+  <link rel="preload" href="assets/marketing/mkt-hero-1.mp4" as="video" type="video/mp4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="canonical" href="https://www.imagine.art/ai-ad-studio"/>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&family=Google+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Inter:wght@300&family=Monomaniac+One&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,8 +34,7 @@
       background: var(--dark);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      gap: 32px;
-      padding: 56px 64px;
+      padding: 56px 64px 140px;
       overflow: hidden;
       position: relative;
     }
@@ -67,12 +64,12 @@
     .hero-top {
       position: relative; z-index: 2;
       display: flex; flex-direction: column; align-items: center;
-      gap: 14px;
+      gap: 14px; margin-bottom: 48px;
     }
     .hero-logo { height: 20px; width: auto; }
     .hero-studio-logo {
       font-family: 'Monomaniac One', sans-serif;
-      font-size: clamp(28px, 5vw, 72px);
+      font-size: clamp(36px, 7vw, 96px);
       font-weight: 400;
       color: #fff;
       letter-spacing: -0.5px;
@@ -115,8 +112,7 @@
 
     /* ── HeroPromptBox, exact reference port ───────────────── */
     .hero-bottom {
-      position: relative;
-      width: 100%;
+      position: absolute; bottom: 56px; left: 0; right: 0;
       display: flex; flex-direction: column; align-items: center;
       z-index: 10; padding: 0 40px;
     }
@@ -220,71 +216,6 @@
     .hpb-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.3); display: inline-block; }
     .hpb-microcopy a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 180ms ease; }
     .hpb-microcopy a:hover { color: #fff; }
-
-    /* Trusted-by logos */
-    .trusted-by { padding: 64px 24px 80px; background: #ffffff; }
-    .trusted-by-inner { max-width: 1180px; margin: 0 auto; }
-    .trusted-by-eyebrow {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin: 0 0 40px;
-    }
-    .trusted-by-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      column-gap: 24px;
-      row-gap: 48px;
-      align-items: center;
-      justify-items: center;
-    }
-    .trusted-by-cell {
-      display: flex; align-items: center; justify-content: center;
-      height: 40px; width: 100%;
-    }
-    .trusted-by-cell img {
-      max-width: 140px; width: auto; object-fit: contain;
-      opacity: 1;
-      transition: transform 480ms ease;
-    }
-    .trusted-by-cell:hover img { transform: scale(1.06); }
-    @media (max-width: 1023px) {
-      .trusted-by { padding: 48px 0 56px; }
-      .trusted-by-inner { max-width: none; padding: 0; }
-      .trusted-by-inner > h2 { font-size: clamp(20px, 5vw, 32px) !important; letter-spacing: -0.5px !important; padding: 0 20px; margin-bottom: 32px !important; }
-      .trusted-by-grid {
-        display: block;
-        grid-template-columns: none;
-        column-gap: 0; row-gap: 0;
-        overflow: hidden;
-        position: relative;
-        mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
-      }
-      .trusted-by-track {
-        display: flex;
-        align-items: center;
-        gap: 48px;
-        width: max-content;
-        animation: trustedMarquee 38s linear infinite;
-      }
-      .trusted-by-track:hover { animation-play-state: paused; }
-      .trusted-by-cell {
-        flex: 0 0 auto;
-        width: auto;
-        min-width: 120px;
-        height: 48px;
-        padding: 0 6px;
-      }
-      .trusted-by-cell img { max-width: 160px; }
-      @keyframes trustedMarquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-      }
-    }
 
     /* Preloader */
     #preloader {
@@ -409,20 +340,15 @@
     /* ─── Gallery (pinch zoom-out on scroll) ────────────── */
     /* ─── Ads Section ───────────────────────────────────── */
     /* ── How it works ── */
-    .mkt-hiw {
-      position: relative; height: 920px; min-height: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 40%, rgba(80,130,255,0.07), transparent 70%),
-        linear-gradient(180deg, #f6f9ff 0%, #eef3fb 100%);
-    }
-    .mkt-hiw-sticky { position: relative; height: 920px; min-height: 0; overflow: hidden; }
+    .mkt-hiw { position: relative; height: 270vh; background: #fff; }
+    .mkt-hiw-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
 
     /* Canvas, full viewport */
     .mkt-hiw-canvas { position: absolute; inset: 0; }
 
     /* Heading, absolute, top-center */
     .mkt-hiw-head {
-      position: absolute; top: 96px; left: 50%; transform: translateX(-50%);
+      position: absolute; top: 160px; left: 50%; transform: translateX(-50%);
       z-index: 20; text-align: center; pointer-events: none;
       width: min(600px, calc(100vw - 40px));
     }
@@ -480,37 +406,23 @@
       backdrop-filter: blur(12px); white-space: nowrap;
     }
 
-    /* ── Mobile (≤599px) ─────────────────────────────────── */
     @media (max-width: 599px) {
-      .mkt-hiw { height: 540px; min-height: 0; }
-      .mkt-hiw-sticky { height: 540px; min-height: 0; }
-      .mkt-hiw-head { top: 40px; }
-      .mkt-hiw-head h2 { font-size: 22px; letter-spacing: -0.6px; line-height: 1.2; }
-      .mkt-hiw-head p { font-size: 13px; }
-      .mkt-hiw-pill { width: 38px; height: 26px; }
-      .hiw-center { opacity: 1; top: 320px !important; }
-      #hiw-c0, #hiw-c1 { top: 320px !important; }
-      .hiw-result { width: 210px; height: 260px; }
+      .hiw-center { opacity: 1; transform: translate(-50%, -50%) scale(0.40); }
     }
-    /* ── Desktop (≥1024px): align cards with center video ── */
-    @media (min-width: 1024px) {
-      #hiw-c0, #hiw-c1 { top: 630px !important; }
-    }
-    /* ── Tablet (600–1023px) ─────────────────────────────── */
-    @media (min-width: 600px) and (max-width: 1023px) {
-      .mkt-hiw { height: 640px; min-height: 0; }
-      .mkt-hiw-sticky { height: 640px; min-height: 0; }
-      .mkt-hiw-head { top: 56px; }
-      .mkt-hiw-head h2 { font-size: 32px; letter-spacing: -1px; }
-      .hiw-center { top: 380px !important; }
-      #hiw-c0, #hiw-c1 { top: 380px !important; }
+    @media (max-width: 768px) {
+      .mkt-hiw { height: 270vh; }
       .hiw-result { width: 240px; height: 300px; }
+      .hiw-center { top: min(calc(100vh - 260px), 540px) !important; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hiw-center { top: min(calc(100vh - 260px), 580px) !important; }
     }
     @media (max-width: 820px) {
       .mkt-hiw-head h2 { letter-spacing: -0.8px; }
+      .mkt-hiw-head { top: 100px; }
     }
-    /* Keep flanking cards aligned with center card on short viewports — desktop only */
-    @media (min-width: 1024px) and (max-height: 860px) {
+    /* Keep flanking cards aligned with center card on short viewports */
+    @media (max-height: 860px) {
       #hiw-c0, #hiw-c1 { top: min(calc(100vh - 260px), 630px) !important; }
     }
 
@@ -850,7 +762,7 @@
     /* 4-column cards grid */
     .mkt-steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 20px;
       overflow: hidden;
@@ -1331,10 +1243,10 @@
       /* ── Steps section ───────────────────────────────────── */
       .mkt-steps { padding: 80px 20px 72px; }
       .mkt-steps-h2 { letter-spacing: -1.5px; }
-      .mkt-steps-grid { grid-template-columns: 1fr; border-radius: 16px; }
+      .mkt-steps-grid { grid-template-columns: 1fr 1fr; border-radius: 16px; }
       .mkt-step-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 28px 24px; }
-      .mkt-step-card:nth-child(odd) { border-right: none; }
-      .mkt-step-card:last-child { border-bottom: none; }
+      .mkt-step-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
+      .mkt-step-card:nth-last-child(-n+2) { border-bottom: none; }
       .mkt-step-num { font-size: 40px; margin-bottom: 28px; }
 
       /* ── How It Works Z-fold ─────────────────────────────── */
@@ -1365,10 +1277,14 @@
        RESPONSIVE - short viewports (MacBook 800px height)
        ═══════════════════════════════════════════════════════ */
     @media (max-height: 860px) {
-      .mkt-hero { padding-top: 40px; }
-      .hero-top { margin-bottom: 24px; }
-      .hero-cards { height: 240px; }
-      .hero-bottom { padding-bottom: 12px; gap: 8px; }
+      .mkt-hero {
+        justify-content: center;
+        padding-top: 96px;
+        padding-bottom: 120px;
+      }
+      .hero-top { margin-bottom: 36px; }
+      .hero-cards { height: 280px; }
+      .hero-bottom { bottom: 24px; gap: 10px; }
     }
   </style>
 </head>
@@ -1396,9 +1312,8 @@
 
     <!-- Logo + title + subtitle -->
     <div class="hero-top">
-      <p style="color: white; font-weight: bold; font-family: inherit;">AI Ad Studio</p>
-      <h1 class="hero-studio-logo">Create AI Ads in Every Format<br>using One Product URL</h1>
-      <p class="hero-sub">From 4 AI ads a month to 50 in one session, with zero shoots, zero sourcing and zero briefing cycles. Launch, test, and optimize AI ad creatives for every platform.</p>
+      <h1 class="hero-studio-logo"><img src="./assets/ads studio logo-light.svg" alt="Imagine Ads Studio"></h1>
+      <p class="hero-sub">One product image. Every ad creative your campaign needs — UGC, cinematic, try-on, unboxing, generated in minutes. AI for advertising, built for ecommerce.</p>
     </div>
 
     <!-- 4 video cards -->
@@ -1432,39 +1347,20 @@
             autocomplete="off" spellcheck="false"></textarea>
           <div class="hpb-placeholder" id="hpbPlaceholder" aria-hidden="true"></div>
           <button type="submit" class="hpb-submit" id="hpbSubmit" aria-label="Generate">
-            Create your First Ad
+            Create
           </button>
         </div>
         <div class="hpb-chips-row" id="hpbChipsRow"></div>
         <div class="hpb-microcopy">
-          <a href="#sec-templates" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);font-size:13px;font-weight:300;font-family:inherit;text-decoration:none;">Browse Templates →</a>
+          <span style="display:inline-flex;align-items:center;gap:6px">
+            <kbd>⏎</kbd> to generate
+          </span>
+          <span class="hpb-dot"></span>
+          <a href="#sec-templates">or browse templates →</a>
         </div>
       </form>
     </div>
 
-  </section>
-
-  <!-- ─── Trusted by ──────────────────────────────────── -->
-  <section class="trusted-by">
-    <div class="trusted-by-inner">
-      <h2 style="text-align:center;margin-bottom:48px;font-family:inherit;font-weight:400;font-size:clamp(28px,3.2vw,48px);letter-spacing:-1.6px;color:#0f0f0f;line-height:1.18;">Supporting Top Brands and Agencies</h2>
-      <div class="trusted-by-grid" id="trustedByGrid">
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Unilever.svg" alt="Unilever" style="max-height:30px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Knorr.svg" alt="Knorr" style="max-height:28px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Kayali.svg" alt="Kayali" style="max-height:28px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Pega.svg" alt="Pega" style="max-height:19px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Ashley.svg" alt="Ashley" style="max-height:22px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Buzzlab.svg" alt="Buzzlab" style="max-height:18px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Crumble.svg" alt="Crumble" style="max-height:18px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/DAP.svg" alt="DAP" style="max-height:30px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Framon.svg" alt="Framon" style="max-height:18px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Komodo.svg" alt="Komodo" style="max-height:20px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/ROLLEMAN.svg" alt="ROLLEMAN" style="max-height:15px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/Smarters.svg" alt="Smarters" style="max-height:16px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/mnsaj.svg" alt="mnsaj" style="max-height:30px"></div>
-        <div class="trusted-by-cell"><img loading="lazy" decoding="async" src="assets/brand-logos/xolour.svg" alt="xolour" style="max-height:13px"></div>
-      </div>
-    </div>
   </section>
 
   <script>
@@ -1487,7 +1383,10 @@
     ];
 
     function pickRandomChips(exclude) {
-      return CHIP_POOL.slice();
+      var avail = CHIP_POOL.filter(function(c) {
+        return !exclude || exclude.indexOf(c.label) === -1;
+      });
+      return avail.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 4);
     }
 
     var FADE_MS = 320, HOLD_MS = 4200;
@@ -1551,6 +1450,17 @@
         });
         chipsRow.appendChild(btn);
       });
+      // Refresh button
+      var refreshBtn = document.createElement('button');
+      refreshBtn.type = 'button';
+      refreshBtn.className = 'hpb-chip hpb-chip-icon';
+      refreshBtn.setAttribute('aria-label', 'Shuffle suggestions');
+      refreshBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-2.64-6.36L21 8"/><path d="M21 3v5h-5"/></svg>';
+      refreshBtn.addEventListener('click', function() {
+        currentChips = pickRandomChips(currentChips.map(function(c) { return c.label; }));
+        renderChips();
+      });
+      chipsRow.appendChild(refreshBtn);
     }
 
     input.addEventListener('focus', function() {
@@ -1636,26 +1546,26 @@
 
         <!-- Heading, top-center, fades as scroll begins -->
         <div class="mkt-hiw-head" id="hiw-head">
-          <h2>Create on-brand visuals<br>for every channel.</h2>
+          <h2>Create <span class="mkt-hiw-pill"><img src="assets/marketing/mkt-gallery-portrait-1.webp" alt=""></span> on-brand visuals<br>for every channel.</h2>
           <p>Drop your references. Watch them merge into campaign-ready visuals.</p>
         </div>
 
         <!-- Surrounding input cards, fly into center one by one -->
         <!-- c0: left -->
         <div class="hiw-card" id="hiw-c0" style="width:220px;height:290px;left:50%;top:min(71%,630px);margin-left:-110px;margin-top:-145px;">
-          <img loading="lazy" decoding="async" src="assets/marketing/hiw-jacket.webp" alt="Jacket">
+          <img src="assets/marketing/hiw-jacket.webp" alt="Jacket">
           <span class="hiw-card-label">Product</span>
         </div>
 
         <!-- c1: right -->
         <div class="hiw-card" id="hiw-c1" style="width:220px;height:290px;left:50%;top:min(71%,630px);margin-left:-110px;margin-top:-145px;">
-          <img loading="lazy" decoding="async" src="assets/marketing/hiw-model.webp" alt="Model">
+          <img src="assets/marketing/hiw-model.webp" alt="Model">
           <span class="hiw-card-label">Model</span>
         </div>
 
         <!-- Center, video, hidden until both cards have merged, then plays -->
         <div class="hiw-center" id="hiw-center">
-          <img loading="lazy" decoding="async" id="hiw-poster" src="assets/marketing/hiw-video-poster.webp" alt="">
+          <img id="hiw-poster" src="assets/marketing/hiw-video-poster.webp" alt="">
           <video id="hiw-video" src="assets/marketing/hiw-video.mp4" muted playsinline loop></video>
           <span class="hiw-center-label">Generation</span>
         </div>
@@ -1675,7 +1585,6 @@
     var poster = document.getElementById('hiw-poster');
     var head   = document.getElementById('hiw-head');
     var videoPlaying = false;
-    var maxReveal = 0;
 
     // 2 cards: jacket (left) and model (right), merge one by one
     var vw = window.innerWidth;
@@ -1683,28 +1592,17 @@
     var isTablet = vw >= 600 && vw < 1024;
     // On mobile, shrink cards and pull them closer to heading
     if (isMobile) {
-      var cw = Math.round(vw * 0.30), ch = Math.round(cw * 1.32);
+      var cw = Math.round(vw * 0.38), ch = Math.round(cw * 1.32);
       cards.forEach(function(c) {
         c.style.width  = cw + 'px'; c.style.height = ch + 'px';
-        c.style.top    = '320px';
+        c.style.top    = 'min(69%, 570px)';
         c.style.marginLeft = (-cw/2) + 'px'; c.style.marginTop = (-ch/2) + 'px';
       });
     } else if (isTablet) {
-      var cwT = 180, chT = Math.round(cwT * 1.32);
-      cards.forEach(function(c) {
-        c.style.width  = cwT + 'px'; c.style.height = chT + 'px';
-        c.style.top    = '380px';
-        c.style.marginLeft = (-cwT/2) + 'px'; c.style.marginTop = (-chT/2) + 'px';
-      });
+      // Tablet: pull cards up to reduce gap from heading
+      cards.forEach(function(c) { c.style.top = 'min(70%, 610px)'; });
     }
-    // Cap horizontal travel so cards stay fully on-screen.
-    // Mobile: cards are 34vw wide (half = 17vw) + ~6vw breathing room → 20vw travel.
-    // Tablet: cards 180px wide → travel 220px (keeps them inside the section).
-    var dxBase = isMobile
-      ? Math.round(vw * 0.28)
-      : isTablet
-        ? 220
-        : Math.min(320, Math.round(vw * 0.26));
+    var dxBase = Math.min(320, Math.round(vw * 0.26));
     var cardData = [
       { dx: -dxBase, dy: 0, rot: -6,  s: 0.00, e: 0.35 },  // jacket, left
       { dx:  dxBase, dy: 0, rot:  6,  s: 0.25, e: 0.60 },  // model , right
@@ -1715,8 +1613,11 @@
     function lerp(a, b, t) { return a + (b-a)*t; }
     function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
-    function update(p) {
-      p = clamp(p || 0, 0, 1);
+    function update() {
+      var secTop = section.getBoundingClientRect().top + window.scrollY;
+      var vh     = window.innerHeight;
+      var raw    = (window.scrollY - secTop) / (section.offsetHeight - vh);
+      var p      = clamp(raw, 0, 1);
 
       // --- Cards fly in one by one ---
       cards.forEach(function(card, i) {
@@ -1733,7 +1634,7 @@
 
         card.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+sc+') rotate('+rot+'deg)';
         card.style.opacity   = op;
-        card.style.zIndex    = lp > 0.5 ? 2 : 11;
+        card.style.zIndex    = lp > 0.5 ? 2 : 3;
       });
 
       // --- Heading stays visible ---
@@ -1744,13 +1645,13 @@
       center.style.opacity = 1;
 
       // --- Video fades in after both cards have merged (p > 0.65) ---
-      // Once revealed, video stays visible permanently (no fade-out on reverse).
       var revealP = clamp((p - 0.65) / 0.20, 0, 1);
-      if (revealP > maxReveal) maxReveal = revealP;
-      video.style.opacity  = maxReveal;
-      poster.style.opacity = 1 - maxReveal;
-      if (!videoPlaying) {
+      video.style.opacity = revealP;
+      poster.style.opacity = 1 - revealP;
+      if (revealP > 0 && !videoPlaying) {
         video.play(); videoPlaying = true;
+      } else if (revealP === 0 && videoPlaying) {
+        video.pause(); video.currentTime = 0; videoPlaying = false;
       }
 
       // --- Center scale ---
@@ -1759,10 +1660,7 @@
       var baseScale;
       if (isMobile) {
         var growP = clamp((p - 0.10) / 0.58, 0, 1);
-        baseScale = lerp(0.40, 0.55, ease(growP));
-      } else if (isTablet) {
-        var growT = clamp((p - 0.10) / 0.58, 0, 1);
-        baseScale = lerp(0.55, 0.75, ease(growT));
+        baseScale = lerp(0.40, 1.0, ease(growP));
       } else {
         baseScale = 1.0;
       }
@@ -1772,38 +1670,8 @@
       center.style.transform = 'translate(-50%, -50%) scale('+sc+')';
     }
 
-    // Looping time-driven animation while the section is in view.
-    // Timeline (one full cycle):
-    //   0.0s - 2.0s : merge in (p 0 → 1)
-    //   2.0s - 3.2s : hold on merged video
-    //   3.2s - 5.2s : reverse out (p 1 → 0)
-    //   5.2s - 6.0s : hold on starting state
-    // then repeat.
-    var CYCLE = 5000;
-    var IN_END = 1500, HOLD1_END = 2700, OUT_END = 4200;
-    var rafId = null, startedAt = null, visible = false;
-
-    function tick(now) {
-      if (!visible) { rafId = null; return; }
-      if (startedAt == null) startedAt = now;
-      var t = (now - startedAt) % CYCLE;
-      var p;
-      if (t < IN_END)        p = t / IN_END;
-      else if (t < HOLD1_END) p = 1;
-      else if (t < OUT_END)   p = 1 - (t - HOLD1_END) / (OUT_END - HOLD1_END);
-      else                    p = 0;
-      update(p);
-      rafId = requestAnimationFrame(tick);
-    }
-
-    update(0);
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        visible = e.isIntersecting;
-        if (visible && rafId == null) { startedAt = null; rafId = requestAnimationFrame(tick); }
-      });
-    }, { threshold: 0.25 });
-    io.observe(section);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
   </script>
 
@@ -1813,15 +1681,15 @@
 
       <div class="mkt-steps-header reveal">
         <div class="sec-label">How It Works</div>
-        <h2 class="mkt-steps-h2">Create high-converting AI video ads in under 3 minutes</h2>
+        <h2 class="mkt-steps-h2">Product page to published ad. 4 steps. Under 3 minutes.</h2>
         <p class="mkt-steps-sub">Paste a URL. Pick a template. Ship the ad. No brief, no designer, no back-and-forth.</p>
       </div>
 
       <div class="mkt-steps-grid reveal">
         <div class="mkt-step-card">
           <span class="mkt-step-num">01</span>
-          <h3 class="mkt-step-title">Add Your Product & Avatar</h3>
-          <p class="mkt-step-body">Paste a product URL from Amazon, your DTC store, or any ecommerce page. The studio scrapes your product images automatically. Then pick an AI avatar from the built-in library or upload your own.</p>
+          <h3 class="mkt-step-title">Paste your product URL</h3>
+          <p class="mkt-step-body">Any Shopify, WooCommerce, Amazon, or DTC product page. The studio reads your product automatically.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             ~10 seconds
@@ -1829,26 +1697,31 @@
         </div>
         <div class="mkt-step-card">
           <span class="mkt-step-num">02</span>
-          <h3 class="mkt-step-title">Pick Your Format & Hook</h3>
-          <p class="mkt-step-body">Choose your ad format — UGC, unboxing, virtual try-on, ASMR, and more. Select a hook style that sets the first 3 seconds. Set your scene, aspect ratio, and duration. The AI handles the script.</p>
+          <h3 class="mkt-step-title">Select a template</h3>
+          <p class="mkt-step-body">UGC, Tutorial, Unboxing, and more. Each template defines the video's format, pacing, and channel fit.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-            ~30 seconds
+            ~20 seconds
           </span>
         </div>
         <div class="mkt-step-card">
           <span class="mkt-step-num">03</span>
-          <h3 class="mkt-step-title">Hit Create & Download</h3>
-          <p class="mkt-step-body">Your AI video ad renders in minutes with correct aspect ratios and export specs for Meta, TikTok, YouTube, and Google already applied. Download and upload directly to Ads Manager.</p>
+          <h3 class="mkt-step-title">Customise in Ad Studio</h3>
+          <p class="mkt-step-body">Choose an avatar, set a hook, write a script direction (or skip it), and pick a background. Full creative control.</p>
+          <span class="mkt-step-time">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            ~1 minute
+          </span>
+        </div>
+        <div class="mkt-step-card">
+          <span class="mkt-step-num">04</span>
+          <h3 class="mkt-step-title">Generate and publish</h3>
+          <p class="mkt-step-body">Your AI video ad renders in minutes. Download platform-ready ad creatives for Meta, TikTok, YouTube, and Google.</p>
           <span class="mkt-step-time">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6.5L7.5 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
             ~2 minutes
           </span>
         </div>
-      </div>
-
-      <div style="display:flex;justify-content:center;margin-top:48px;">
-        <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);font-family:inherit;font-size:14px;font-weight:300;border-radius:14px;text-decoration:none;letter-spacing:0.2px;border:1px solid rgba(255,255,255,0.18);">Create AI Ads →</a>
       </div>
 
     </div>
@@ -1860,20 +1733,20 @@
       <div class="templates-head reveal-blur">
         <div class="templates-head-left">
           <span class="tmpl-label">Templates</span>
-          <h2>Unlimited Creative Directions with one Tool</h2>
+          <h2>Every campaign. Every aesthetic.</h2>
         </div>
         <p>From bold brand campaigns to intimate lifestyle storytelling - any style, instantly.</p>
       </div>
       <div class="styles-bento">
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-ugc1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">UGC Video Ad</div><div class="s-card-prompt">Authentic creator-style content that converts. Product + avatar in seconds</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-unboxing1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Unboxing</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Unboxing Reveal</div><div class="s-card-prompt">First-impression unboxing videos that drive purchase intent</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-ugc2.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Creator UGC</div><div class="s-card-prompt">Scroll-stopping creator ads with your product, zero casting needed</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-tryon1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Try-On</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Virtual Try-On</div><div class="s-card-prompt">Show your product worn, in motion. No model booking required</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-hypermotion1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Hyper Motion</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Hyper Motion</div><div class="s-card-prompt">Cinematic product videos with dynamic motion, built for paid social</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-review1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Review</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Product Review</div><div class="s-card-prompt">Trust-building review-style ads with real-feel testimonial energy</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-vtpro1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Pro Try-On</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Pro Virtual Try-On</div><div class="s-card-prompt">Premium try-on with lifelike fit, expression, and movement</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-ugc3.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">UGC Testimonial</div><div class="s-card-prompt">Word-of-mouth style ads with organic feel and high conversion rates</div></div></a>
-        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video class="lazy-video" preload="none" data-src="assets/marketing/tmpl-asmr.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">ASMR</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">ASMR</div><div class="s-card-prompt">Sensory-driven product content: tactile, immersive, impossible to skip</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-ugc1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">UGC Video Ad</div><div class="s-card-prompt">Authentic creator-style content that converts. Product + avatar in seconds</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-unboxing1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Unboxing</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Unboxing Reveal</div><div class="s-card-prompt">First-impression unboxing videos that drive purchase intent</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-ugc2.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Creator UGC</div><div class="s-card-prompt">Scroll-stopping creator ads with your product, zero casting needed</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-tryon1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Try-On</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Virtual Try-On</div><div class="s-card-prompt">Show your product worn, in motion. No model booking required</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-hypermotion1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Hyper Motion</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Hyper Motion</div><div class="s-card-prompt">Cinematic product videos with dynamic motion, built for paid social</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-review1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Review</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Product Review</div><div class="s-card-prompt">Trust-building review-style ads with real-feel testimonial energy</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-vtpro1.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">Pro Try-On</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">Pro Virtual Try-On</div><div class="s-card-prompt">Premium try-on with lifelike fit, expression, and movement</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-ugc3.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">UGC</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">UGC Testimonial</div><div class="s-card-prompt">Word-of-mouth style ads with organic feel and high conversion rates</div></div></a>
+        <a class="s-card" href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener"><video src="assets/marketing/tmpl-asmr.mp4" autoplay loop muted playsinline></video><div class="s-card-overlay"></div><span class="s-card-tag">ASMR</span><div class="s-card-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H5M11.5 2.5V9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-card-body"><div class="s-card-name">ASMR</div><div class="s-card-prompt">Sensory-driven product content: tactile, immersive, impossible to skip</div></div></a>
       </div>
       <div class="tmpl-cta reveal">
         <a href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener" class="btn-outline-light">Explore Templates <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8 4l4 3.5L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -1884,108 +1757,51 @@
   <!-- ─── How It Works Z-fold ────────────────────────────────── -->
   <section class="hiw-zfold" id="sec-how-it-works">
     <div class="hiw-zfold-inner">
-      <h2 style="text-align:center;font-family:inherit;font-weight:400;font-size:clamp(28px,3.2vw,48px);letter-spacing:-1.6px;color:#0f0f0f;line-height:1.18;margin-bottom:16px;">Build High-Performing Ads with AI</h2>
-      <p style="text-align:center;font-family:inherit;font-size:16px;color:#0f0f0f;line-height:1.7;margin-bottom:48px;">With ImagineArt's AI Ad Studio, create launch-ready video ads from one product URL in minutes.</p>
 
       <div class="hiw-zfold-list">
 
         <!-- Step 01, image left, text right -->
         <div class="hiw-zfold-item reveal">
           <div class="hiw-zfold-media">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/zfold-1.mp4" autoplay loop muted playsinline></video>
+            <video src="assets/marketing/zfold-1.mp4" autoplay loop muted playsinline></video>
           </div>
           <div class="hiw-zfold-text">
-            <span style="display:block;color:rgba(0,0,0,0.45);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">URL to Ad</span>
-            <h3 class="hiw-zfold-title">Paste Any Product URL and Get a Finished AI Video Ad</h3>
-            <p class="hiw-zfold-body">Drop in any product page URL and ImagineArt's AI ad creator scrapes product images, builds the script, and generates a platform-ready video ad in minutes, without a brief, a designer, or a production cycle between you and the finished asset.</p>
-            <ul class="hiw-zfold-body" style="padding-left:18px;line-height:1.8;">
-              <li>Supports product URLs from any ecommerce store</li>
-              <li>Product images scraped automatically</li>
-              <li>Script generated from your product copy and selected hook</li>
-              <li>AI ad creation from brief to finished video in under 3 minutes</li>
-              <li>From $5K shoot + 14 days → $0 + 3 minutes</li>
-            </ul>
-            <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-block;width:fit-content;margin-top:12px;padding:12px 22px;background:#ebebeb;color:#0f0f0f;font-family:inherit;font-size:14px;font-weight:600;border-radius:12px;text-decoration:none;">Try It Now</a>
+            <h3 class="hiw-zfold-title">Paste your product URL.<br>Get a finished video.</h3>
+            <p class="hiw-zfold-body">The studio scrapes your product images and builds a campaign-ready video automatically.</p>
+
+            <blockquote class="hiw-zfold-quote">
+              A single product shoot costs $5,000–$15,000 and takes 2–4 weeks. Paste a URL instead. The studio does the rest automatically.
+            </blockquote>
+
+            <p class="hiw-zfold-body">Drop in any product page URL. ImagineArt's AI ad generator scrapes your product images automatically, picks the right visuals, and builds a complete video ad around your chosen template. The fastest ad creator for ecommerce.</p>
+
+
+            <p class="hiw-zfold-check">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#3dba80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              From $5K shoot + 14 days → $0 + 3 minutes
+            </p>
           </div>
         </div>
 
         <!-- Step 02, text left, image right (reversed) -->
         <div class="hiw-zfold-item hiw-zfold-reverse reveal">
           <div class="hiw-zfold-media">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/zfold-2.mp4" autoplay loop muted playsinline></video>
+            <video src="assets/marketing/zfold-2.mp4" autoplay loop muted playsinline></video>
           </div>
           <div class="hiw-zfold-text">
-            <span style="display:block;color:rgba(0,0,0,0.45);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Ad Templates</span>
-            <h3 class="hiw-zfold-title">Nine Formats and Every Ad Creative Your Campaign Needs</h3>
-            <p class="hiw-zfold-body">ImagineArt is the AI that creates ads in 9 formats that are built for paid social performance, not just aesthetics. Pick the format that matches your product, your platform, and your audience.</p>
-            <ul class="hiw-zfold-body" style="padding-left:18px;line-height:1.8;">
-              <li>UGC — creator-style ads that outperform polished video by 29%</li>
-              <li>Unboxing — first-impression videos that drive purchase intent</li>
-              <li>Virtual Try-On — show your product worn, in motion, without booking model</li>
-              <li>ASMR — sensory-driven, immersive content that's impossible to skip</li>
-              <li>Hyper Motion — cinematic AI product videos with dynamic movement for paid social</li>
-            </ul>
-            <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-block;width:fit-content;margin-top:12px;padding:12px 22px;background:#ebebeb;color:#0f0f0f;font-family:inherit;font-size:14px;font-weight:600;border-radius:12px;text-decoration:none;">Explore Ad Templates</a>
-          </div>
-        </div>
+            <h3 class="hiw-zfold-title">Full creative control.<br>Zero production overhead.</h3>
+            <p class="hiw-zfold-body">Avatar, hook, script, background: every creative decision in one session, handled by AI.</p>
 
-        <!-- Step 03 -->
-        <div class="hiw-zfold-item reveal">
-          <div class="hiw-zfold-media">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/zfold-3.mp4" autoplay loop muted playsinline></video>
-          </div>
-          <div class="hiw-zfold-text">
-            <span style="display:block;color:rgba(0,0,0,0.45);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Hook Selection</span>
-            <h3 class="hiw-zfold-title">Set the exact first 3 seconds that stop the scroll</h3>
-            <p class="hiw-zfold-body">If your ad loses viewers in 3 seconds, it never had a chance. ImagineArt gives you a built-in hook library so you set exactly how your video opens before a single frame is generated.</p>
-            <ul class="hiw-zfold-body" style="padding-left:18px;line-height:1.8;">
-              <li>Stunt hooks — pattern-interrupt openings that force a pause mid-scroll</li>
-              <li>Subtle hooks — curiosity-led openings that earn the next 10 seconds</li>
-              <li>Hook library built from top-performing paid social creative</li>
-              <li>Swap the hook without regenerating the entire ad</li>
-              <li>Test multiple hooks from the same product URL in one session</li>
-            </ul>
-            <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-block;width:fit-content;margin-top:12px;padding:12px 22px;background:#ebebeb;color:#0f0f0f;font-family:inherit;font-size:14px;font-weight:600;border-radius:12px;text-decoration:none;">Test Your Hooks Now</a>
-          </div>
-        </div>
+            <blockquote class="hiw-zfold-quote">
+              UGC converts 29% better than polished ads, but sourcing creators costs $400 per video and takes 5-14 days. Studio gives you an AI presenter, and a set background in one session.
+            </blockquote>
 
-        <!-- Step 04 -->
-        <div class="hiw-zfold-item hiw-zfold-reverse reveal">
-          <div class="hiw-zfold-media">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/zfold-4.mp4" autoplay loop muted playsinline></video>
-          </div>
-          <div class="hiw-zfold-text">
-            <span style="display:block;color:rgba(0,0,0,0.45);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Scenes & Backgrounds</span>
-            <h3 class="hiw-zfold-title">Control every background without booking a single location</h3>
-            <p class="hiw-zfold-body">The background is context, not decoration. ImagineArt's AI for advertising teams gives you full environment control, including lifestyle settings, studio backdrops, outdoor locations, and branded environments, without a single location booking.</p>
-            <ul class="hiw-zfold-body" style="padding-left:18px;line-height:1.8;">
-              <li>Lifestyle environments for UGC and organic-feeling social content</li>
-              <li>Studio backdrops for clean, direct-response ad creatives</li>
-              <li>Outdoor and location settings for fashion, beauty, and supplements</li>
-              <li>Branded environments for consistent multi-campaign identity</li>
-              <li>Swap backgrounds without changing the hook, avatar, or script</li>
-            </ul>
-            <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-block;width:fit-content;margin-top:12px;padding:12px 22px;background:#ebebeb;color:#0f0f0f;font-family:inherit;font-size:14px;font-weight:600;border-radius:12px;text-decoration:none;">Set Scene & Generate</a>
-          </div>
-        </div>
+            <p class="hiw-zfold-body">Ad Studio is the complete solution for AI ad creation — URL to Video with full creative direction layered on top. Create ads with AI: choose the avatar, set the hook, write the script, pick the background. The most powerful AI for ads built for ecommerce teams.</p>
 
-        <!-- Step 05 -->
-        <div class="hiw-zfold-item reveal">
-          <div class="hiw-zfold-media">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/zfold-5.mp4" autoplay loop muted playsinline></video>
-          </div>
-          <div class="hiw-zfold-text">
-            <span style="display:block;color:rgba(0,0,0,0.45);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">AI Avatar</span>
-            <h3 class="hiw-zfold-title">Run 50 ad variants with 40+ AI avatars in a single session</h3>
-            <p class="hiw-zfold-body">UGC converts 29% better than polished brand video, but sourcing real creators costs $400 per video and takes 5–14 days. Replace the entire creator pipeline with ImagineArt AI for ads with realistic avatars, native lip-sync, and full product interaction in one session.</p>
-            <ul class="hiw-zfold-body" style="padding-left:18px;line-height:1.8;">
-              <li>40+ avatars across demographics, aesthetics, and tones</li>
-              <li>Custom avatar generation — describe the presenter you need</li>
-              <li>@ tag your avatar and product directly in your prompt for full control</li>
-              <li>Native lip-sync with natural movement and consistent expression</li>
-              <li>Use the same avatar across 20–50 variants in a single session</li>
-            </ul>
-            <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-block;width:fit-content;margin-top:12px;padding:12px 22px;background:#ebebeb;color:#0f0f0f;font-family:inherit;font-size:14px;font-weight:600;border-radius:12px;text-decoration:none;">Pick Avatar & Generate</a>
+            <p class="hiw-zfold-check">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7.5L5.5 11L12 3.5" stroke="#3dba80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Replace your entire creator and production workflow
+            </p>
           </div>
         </div>
 
@@ -2015,14 +1831,14 @@
     <div class="mkt-ads-inner">
 
       <div class="ads-head reveal-blur">
-        <h2>AI Ads that stop the scroll. Built in minutes.</h2>
-        <p>Faster creative velocity, lower CAC, and stronger ROAS across Meta and TikTok, all from AI generated ads created through ImagineArt Ad Studio</p>
+        <h2>Ads that stop the scroll.<br>Built in minutes.</h2>
+        <p>Generate campaign-ready visuals for every platform - Meta, TikTok, Google, OOH - straight from one brief. No shoot. No wait.</p>
       </div>
 
       <div class="ads-grid reveal">
         <!-- Main card: video bg + platform badges -->
         <div class="ads-card ads-card-main">
-          <video class="lazy-video" preload="none" data-src="assets/marketing/feed-hypermotion1.mp4" autoplay loop muted playsinline></video>
+          <video src="assets/marketing/feed-hypermotion1.mp4" autoplay loop muted playsinline></video>
           <div class="ads-card-gradient"></div>
           <div class="ads-card-main-content">
             <div class="ads-platforms-row">
@@ -2060,7 +1876,7 @@
           </div>
           <!-- Secondary video card -->
           <div class="ads-card ads-card-secondary">
-            <video class="lazy-video" preload="none" data-src="assets/marketing/ad-hypermotion2.mp4" autoplay loop muted playsinline></video>
+            <video src="assets/marketing/ad-hypermotion2.mp4" autoplay loop muted playsinline></video>
             <div class="ads-card-gradient"></div>
             <div class="ads-card-secondary-content">
               <h3>50 variants. One prompt.</h3>
@@ -2108,7 +1924,7 @@
       <div class="mkt-compare-header reveal">
         <p class="mkt-compare-eyebrow">Why not just use something else?</p>
         <h2 class="mkt-compare-h2">Built differently from every other tool.</h2>
-        <p class="mkt-compare-sub">Generic tools were built for filmmakers, not ecommerce teams. Neither generic AI video tools nor UGC platforms were built as AI for advertising at scale. ImagineArt is the AI ad creation platform built specifically for brands that run paid social.</p>
+        <p class="mkt-compare-sub">Most AI tools were built for filmmakers, not ecommerce teams. If you need AI video ads and high-volume ad creatives at speed, neither generic video tools nor UGC platforms were built for that.</p>
       </div>
 
       <div class="mkt-compare-table reveal">
@@ -2117,7 +1933,7 @@
         <div class="mkt-compare-row mkt-compare-head">
           <div class="mkt-compare-cell"></div>
           <div class="mkt-compare-cell">
-            <p class="mkt-col-name">ImagineArt Ad Studio</p>
+            <p class="mkt-col-name">ImagineArt Studio</p>
           </div>
           <div class="mkt-compare-cell">
             <p class="mkt-col-name">Generic AI Video Tools</p>
@@ -2132,7 +1948,7 @@
         <!-- Row: Paste URL → ad ready -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">Paste URL → ad ready</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Yes, no setup required</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2146,7 +1962,7 @@
         <!-- Row: Built for ecommerce -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">Built for ecommerce</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Native to ecommerce</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2160,7 +1976,7 @@
         <!-- Row: Ad formats -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">UGC, demo, cinematic, try-on</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>9 ad formats</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2174,7 +1990,7 @@
         <!-- Row: AI avatar library -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">AI avatar library</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>40+ avatars + custom generation</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2188,7 +2004,7 @@
         <!-- Row: Time from brief to ad -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">Time from brief to ad</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Under 3 minutes</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2202,7 +2018,7 @@
         <!-- Row: Cost per ad -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">Cost per ad at volume</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fraction of a cent</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2216,7 +2032,7 @@
         <!-- Row: Platform-ready export -->
         <div class="mkt-compare-row">
           <div class="mkt-compare-cell"><p class="mkt-row-label">Platform-ready export</p></div>
-          <div class="mkt-compare-cell" data-col="ImagineArt Ad Studio">
+          <div class="mkt-compare-cell" data-col="ImagineArt Studio">
             <span class="mkt-cell-val"><span class="mkt-icon-check"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Meta, TikTok, YouTube, Google</span>
           </div>
           <div class="mkt-compare-cell" data-col="Generic AI Video Tools">
@@ -2228,77 +2044,31 @@
         </div>
 
       </div>
-      <div style="display:flex;justify-content:center;margin-top:48px;">
-        <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);font-family:inherit;font-size:14px;font-weight:300;border-radius:14px;text-decoration:none;letter-spacing:0.2px;border:1px solid rgba(255,255,255,0.18);">Create AI Ads →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Industries ──────────────────────────────────────── -->
-  <section style="padding:96px 24px;background:#fff;">
-    <div style="max-width:1100px;margin:0 auto;">
-      <h2 style="font-family:inherit;font-size:clamp(28px,3.2vw,48px);font-weight:400;letter-spacing:-1.6px;color:#0f0f0f;line-height:1.18;margin:0 0 16px;">AI Ad Studio that Works Across Every Industry</h2>
-      <p style="font-family:inherit;font-size:16px;color:#555;line-height:1.7;max-width:680px;margin:0 0 64px;">From solo founders to marketing teams, ImagineArt is the AI for advertising that cuts production time and scales creative output, without adding headcount or budget.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px 48px;">
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l2 6-8 3-8-3z"/><path d="M2 8h20v13a1 1 0 01-1 1H3a1 1 0 01-1-1z"/><line x1="12" y1="11" x2="12" y2="21"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">E-Commerce &amp; Retail</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">Launch AI product videos and ad creatives in minutes. ImagineArt AI Ad Studio generates scroll-stopping UGC-style creatives for any product category.</p>
-        </div>
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H7v10a1 1 0 001 1h8a1 1 0 001-1V10h3.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">Fashion &amp; Apparel</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">Showcase collections with AI-generated ads that match your brand aesthetic. Swap looks, update hooks, and test new angles without reshooting a single frame.</p>
-        </div>
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">Food &amp; Beverage</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">Turn menu items and product shots into AI video ads. Describe your scene and create ads with AI fast enough for daily specials.</p>
-        </div>
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">Real Estate</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">Create polished property ads with professional avatars and compelling hooks. ImagineArt AI Ad Studio takes you from listing to live ad in under three minutes.</p>
-        </div>
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">Beauty &amp; Skincare</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">Generate before-after narratives, ingredient callouts, and influencer-style AI UGC ads without hiring talent. Consistent brand voice across every creative, every time.</p>
-        </div>
-        <div>
-          <div style="width:40px;height:40px;background:#ede9fe;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6c2bd9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <div style="font-family:inherit;font-size:15px;font-weight:600;color:#0f0f0f;margin-bottom:10px;">SaaS &amp; Apps</div>
-          <p style="font-family:inherit;font-size:14px;color:#555;line-height:1.7;margin:0;">The AI that creates ads doesn't need a screen recording setup. Explain your product, demonstrate your value prop, and drive signups with demo-style AI ads.</p>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:center;margin-top:48px;">
-        <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#f0f0f0;color:#0f0f0f;font-family:inherit;font-size:15px;font-weight:600;border-radius:12px;text-decoration:none;">Make Your First AI Ad →</a>
-      </div>
     </div>
   </section>
 
   <section class="mkt-gallery" id="sec-gallery">
     <div class="gallery-header">
       <div class="sec-label reveal">Gallery</div>
-      <h2 class="sec-h2 reveal">Real campaigns with zero production cost.</h2>
-      <p class="sec-sub reveal">A glimpse of what ecommerce brands and agencies create with ImagineArt's AI ad generator every day.</p>
+      <h2 class="sec-h2 reveal">Real campaigns.<br>Zero production cost.</h2>
+      <p class="sec-sub reveal">A glimpse of what agencies create with ImagineArt every day.</p>
       <a href="https://www.imagine.art/flow?tab=discover" target="_blank" rel="noopener" class="gallery-link reveal">Browse all work →</a>
     </div>
     <div class="gallery-pin-wrap">
       <div class="gallery-pin">
         <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-kitchenaid.webp" alt="Product Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Campaign</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-8.webp" alt="Out-of-Home"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Out-of-Home</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-1.webp" alt="Editorial"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Editorial</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-5.webp" alt="Brand Identity"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Brand Identity</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-trimmer.webp" alt="Lifestyle"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Lifestyle</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-6.webp" alt="Street Poster"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Street Poster</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-byredo.webp" alt="Luxury Fragrance"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Fragrance</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-9.webp" alt="Virtual Styling"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Virtual Styling</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/mkt-gallery-2.webp" alt="Fashion Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Fashion Campaign</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-laneige.webp" alt="Beauty"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Beauty</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-junday.webp" alt="Product Launch"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Launch</span></div>
-          <div class="gallery-item"><img loading="lazy" decoding="async" src="assets/marketing/gallery-lv.webp" alt="Luxury Accessories"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Accessories</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-kitchenaid.webp" alt="Product Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Campaign</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-8.webp" alt="Out-of-Home"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Out-of-Home</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-1.webp" alt="Editorial"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Editorial</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-5.webp" alt="Brand Identity"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Brand Identity</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-trimmer.webp" alt="Lifestyle"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Lifestyle</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-6.webp" alt="Street Poster"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Street Poster</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-byredo.webp" alt="Luxury Fragrance"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Fragrance</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-9.webp" alt="Virtual Styling"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Virtual Styling</span></div>
+          <div class="gallery-item"><img src="assets/marketing/mkt-gallery-2.webp" alt="Fashion Campaign"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Fashion Campaign</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-laneige.webp" alt="Beauty"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Beauty</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-junday.webp" alt="Product Launch"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Product Launch</span></div>
+          <div class="gallery-item"><img src="assets/marketing/gallery-lv.webp" alt="Luxury Accessories"><div class="gallery-item-overlay"></div><span class="gallery-item-label">Luxury Accessories</span></div>
         </div>
       </div>
     </div>
@@ -2332,11 +2102,11 @@
       <div class="mkt-faq-list reveal">
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">Will the ads look obviously AI-generated?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>Will the ads look obviously AI-generated?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">Judge by the output, not the description. The gallery above is entirely AI-generated using ImagineArt. Our avatars use Seedance 2.0 with native lip-sync, physics-aware movement, and consistent characters across shots. The formats, UGC, virtual try-on, hyper motion, are chosen specifically because they map to natural, realistic styles that perform on paid social. The fastest way to answer this question is to watch the demo videos on this page.</p>
             </div>
@@ -2344,47 +2114,47 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">Which AI tool is best for ecommerce video ads?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>Does this work for my product type?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
-              <p class="mkt-faq-answer-text">ImagineArt is the AI ad creator built specifically for ecommerce — it starts from a product URL and outputs platform-ready ad creatives with no prompting required. It's the AI for ads that replaces both production teams and creator pipelines in one session.</p>
+              <p class="mkt-faq-answer-text">If your product has a page or a photo, the studio works with it. We see strong results across beauty, skincare, supplements, apparel, footwear, accessories, electronics, home goods, food and beverage, and digital products. Virtual try-on and hyper motion are especially powerful for fashion and luxury. UGC and review modes work best for consumables and health products.</p>
             </div>
           </div>
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">Can I use the ads on Meta, TikTok, and YouTube?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>Can I use the ads on Meta, TikTok, and YouTube?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
-              <p class="mkt-faq-answer-text">Yes. Every export is formatted to platform spec — correct aspect ratios for Stories, Reels, Feed, TikTok, YouTube pre-roll, and more. Download and upload directly to Ads Manager, no post-processing required.</p>
+              <p class="mkt-faq-answer-text">Every export is formatted to platform spec: correct aspect ratios for Stories, Reels, Feed, TikTok, YouTube pre-roll, and more. Paid plans export with no watermarks. Download and upload directly to Ads Manager, no post-processing or resizing required.</p>
             </div>
           </div>
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">How do I create video ads with AI without writing a script?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>What if I need full control over the script?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
-              <p class="mkt-faq-answer-text">Paste your product URL and the studio generates the script automatically from your product copy and chosen hook. AI ad creation handles 90% of the work — you stay in control of the final output.</p>
+              <p class="mkt-faq-answer-text">You always have full edit access before generating. The AI writes the first draft based on your product and chosen hook. You can edit every line in the interface before hitting generate, or skip editing entirely and ship as-is. The AI saves 90% of the work. You stay in control of the final output.</p>
             </div>
           </div>
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">How many ad variants can I generate?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>How many ad variants can I generate?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
               <p class="mkt-faq-answer-text">As many as your plan allows, and plans are structured for high-volume production. A single session can produce 20-50 variants across different formats, avatars, hooks, and product angles. This is the output velocity your ad account needs to stay ahead of creative fatigue on Meta and TikTok.</p>
             </div>
@@ -2392,13 +2162,13 @@
         </div>
 
         <div class="mkt-faq-item">
-          <button class="mkt-faq-trigger" aria-expanded="true">
-            <h3 style="margin:0;font-size:inherit;font-weight:inherit;color:inherit;">We already have a creative agency. Why switch?</h3>
+          <button class="mkt-faq-trigger" aria-expanded="false">
+            <span>We already have a creative agency. Why switch?</span>
             <span class="mkt-faq-icon">+</span>
           </button>
-          <div class="mkt-faq-answer" data-open="true">
+          <div class="mkt-faq-answer">
             <div class="mkt-faq-answer-inner">
-              <p class="mkt-faq-answer-text">You probably do not need to fully switch - you need to supplement. Agencies are great for hero brand campaigns. They are slow and expensive for the ongoing volume that Meta and TikTok demand. Most brands use ImagineArt to create ads with AI for paid social, the ongoing ad creatives Meta and TikTok demand, and keep their agency for big quarterly launches. Imagine Ads Studio doesn't replace brand strategy. It replaces the production bottleneck. The cost difference: $5,000-$15,000 per agency shoot versus a monthly studio subscription.</p>
+              <p class="mkt-faq-answer-text">You probably do not need to fully switch — you need to supplement. Agencies are great for hero brand campaigns. They are slow and expensive for the ongoing volume that Meta and TikTok demand. Most brands use ImagineArt to create ads with AI for paid social, the ongoing ad creatives Meta and TikTok demand, and keep their agency for big quarterly launches. Imagine Ads Studio doesn't replace brand strategy. It replaces the production bottleneck. The cost difference: $5,000-$15,000 per agency shoot versus a monthly studio subscription.</p>
             </div>
           </div>
         </div>
@@ -2408,13 +2178,6 @@
   </section>
   <script>
     (function() {
-      // Open all FAQs by default
-      document.querySelectorAll('.mkt-faq-trigger').forEach(function(btn) {
-        btn.setAttribute('aria-expanded', 'true');
-        btn.nextElementSibling.setAttribute('data-open', 'true');
-        var icon = btn.querySelector('.mkt-faq-icon');
-        if (icon) icon.textContent = '−';
-      });
       document.querySelectorAll('.mkt-faq-trigger').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -2439,7 +2202,7 @@
   <!-- ─── Final CTA ────────────────────────────────────────── -->
   <!-- ─── Final CTA ──────────────────────────────────────── -->
   <section class="mkt-final" id="sec-final">
-    <video preload="none" class="lazy-video mkt-final-bg" data-src="assets/marketing/feed-hypermotion2.mp4" autoplay loop muted playsinline></video>
+    <video class="mkt-final-bg" src="assets/marketing/feed-hypermotion2.mp4" autoplay loop muted playsinline></video>
     <div class="mkt-final-overlay"></div>
     <div class="mkt-final-noise"></div>
     <div class="mkt-final-inner reveal-blur">
@@ -2447,7 +2210,7 @@
       <p class="final-sub">Every ad creative you need is already on your product page. You just haven't generated it yet.</p>
       <div class="final-btns">
         <a href="https://cal.com/team/imagineart/imagineart-customer-assist" target="_blank" rel="noopener" class="btn-final-white">Book a demo</a>
-        <a href="https://www.imagine.art/ad-studio" target="_blank" rel="noopener" class="btn-final-ghost">Get Started</a>
+        <a href="https://www.imagine.art/flow" target="_blank" rel="noopener" class="btn-final-ghost">Get Started</a>
       </div>
       <div class="final-stats">
         <div class="fstat">
@@ -2734,46 +2497,5 @@
     })();
 
   </script>
-  <script>
-  // Trusted-by marquee: wrap cells in a track and duplicate for seamless loop on small screens.
-  (function(){
-    var grid = document.getElementById('trustedByGrid');
-    if (!grid) return;
-    var mq = window.matchMedia('(max-width: 1023px)');
-    var wrapped = false;
-    function apply(){
-      if (mq.matches && !wrapped) {
-        var cells = Array.from(grid.children);
-        var track = document.createElement('div');
-        track.className = 'trusted-by-track';
-        cells.forEach(function(c){ track.appendChild(c); });
-        // Duplicate cells for seamless wrap
-        cells.forEach(function(c){ track.appendChild(c.cloneNode(true)); });
-        grid.appendChild(track);
-        wrapped = true;
-      }
-    }
-    apply();
-    mq.addEventListener ? mq.addEventListener('change', apply) : mq.addListener(apply);
-  })();
-  </script>
-
-<script>
-(function(){
-  var vids = document.querySelectorAll('video.lazy-video');
-  if(!vids.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var v = e.target;
-        if(v.dataset.src){ v.src = v.dataset.src; delete v.dataset.src; v.load(); }
-        v.play().catch(function(){});
-        io.unobserve(v);
-      }
-    });
-  }, {rootMargin:'200px'});
-  vids.forEach(function(v){ io.observe(v); });
-})();
-</script>
 </body>
 </html>
